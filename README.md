@@ -1,4 +1,4 @@
-# 🎁 **ChristmasGifts** [![CodeFactor](https://www.codefactor.io/repository/github/mitriyf/christmasgifts/badge)](https://www.codefactor.io/repository/github/jdevs-mc/christmasgifts)
+# 🎁 **ChristmasGifts** [![CodeFactor](https://www.codefactor.io/repository/github/mitriyf/christmasgifts/badge)](https://www.codefactor.io/repository/github/mitriyf/christmasgifts)
 ## 🛷 Deliver gifts to your server that will bring pleasant surprises to your players 
 This plugin adds a gift delivery mechanic for your players. 
 - $ Versions 1.7.1-1.21 are supported.
