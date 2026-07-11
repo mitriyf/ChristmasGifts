@@ -2,34 +2,44 @@
 loot:
   santa:
     2_Loot:
-      item:
-        ==: org.bukkit.inventory.ItemStack
-        type: EMERALD
+      item: EMERALD
       chance: 100
       amount: 1-16
+      location:
+        addX: 0.5
+        addY: 0.5
+        addZ: 0.5
     8_Loot:
-      item:
-        ==: org.bukkit.inventory.ItemStack
-        type: DIAMOND_SWORD
+      item: DIAMOND_SWORD
       chance: 25
       amount: 1-1
-########################################################################################
+      location:
+        addX: 0.5
+        addY: 0.5
+        addZ: 0.5
+  ########################################################################################
   grinch:
     42_Loot:
-      item:
-        ==: org.bukkit.inventory.ItemStack
-        type: BONE
+      item: BONE
       chance: 100
       amount: 1-8
+      location:
+        addX: 0.5
+        addY: 0.5
+        addZ: 0.5
     2_Loot:
-      item:
-        ==: org.bukkit.inventory.ItemStack
-        type: COAL
+      item: COAL
       chance: 100
       amount: 2-12
+      location:
+        addX: 0.5
+        addY: 0.5
+        addZ: 0.5
     44_Loot:
-      item:
-        ==: org.bukkit.inventory.ItemStack
-        type: COAL_BLOCK
+      item: COAL_BLOCK
       chance: 20
       amount: 1-12
+      location:
+        addX: 0.5
+        addY: 0.5
+        addZ: 0.5

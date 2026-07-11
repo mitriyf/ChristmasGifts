@@ -1,9 +1,9 @@
 name: ChristmasGifts
-version: '1.3.2'
-main: dev.jdevs.JGifts.Christmas
+version: '1.4'
+main: ru.mitriyf.christmasgifts.ChristmasGifts
 authors: [ JDevs, Mitriyf ]
 api-version: 1.13
-softdepend: [DecentHolograms, HolographicDisplays, PlaceholderAPI, WorldGuard, WorldEdit]
+softdepend: [ DecentHolograms, HolographicDisplays, FancyHolograms, PlaceholderAPI, WorldGuard, WorldEdit ]
 commands:
-  christmas:
+  christmasgifts:
     aliases: [ gifts ]

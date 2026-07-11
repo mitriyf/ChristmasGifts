@@ -1,0 +1,232 @@
+###########################################################
+#                      ChristmasGifts                     #
+#                           1.4                           #
+###########################################################
+
+# When updating the plugin, this setting can help to update the configuration for you (Do not delete).
+version: 1.4
+
+# Values:
+# true - Enable.
+# false - Disable.
+# null - Set this when you don't need this message in the chat.
+
+# Get information about the teams:
+# /gifts
+
+# Settings.
+settings:
+  # Insert hex or minimessage.
+  # minimessage - for Paper, 1.18+.
+  # hex - It works starting from version 1.16.5, but if your server is lower than this version, do not change anything.
+  translate: hex
+  # You can find out the language code by clicking on the link below and looking at the In-Game section.
+  # https://minecraft.fandom.com/wiki/Language#Languages
+  # Or you can find out your language code by running the command (don't forget to change the language on the client):
+  # /jparkour admin locale - Get the client's language code.
+  # You can configure locales in the plugin folder where the locales. The folder will be created when you enable locales.
+  # in the plugin configuration. You can create your own files.
+  # Set true to enable locales for messages.
+  locales: false
+  # Notification of updates.
+  updater:
+    # Is it enabled?
+    # Updates are checked when the plugin is enabled.
+    enabled: true
+    # Auto-update settings.
+    settings:
+      # Enable this to update only critical updates.
+      required: true
+      # Enable this feature to update the plugin with any new versions.
+      release: false
+  # Special settings.
+  special:
+    # Loot immediately drops out of the gift, so that in case of a crash, the player can pick up resources.
+    autoGive: false
+    # If your server crashes frequently, then enable this feature, but if your server does NOT crash, do not enable this option.
+    # This feature has a very bad effect on the plugin's performance.
+    onCrashes: false
+  # Supported plugins.
+  supports:
+    # Select the plugin used for the hologram above the gift.
+    # Put "null" if you do not want to use holograms.
+    # Put "FancyHolograms" if you use this plugin on holograms.
+    # Put "HolographicDisplays" if you use this plugin on holograms.
+    # Put "DecentHolograms" if you use this plugin on holograms.
+    hologramType: "null"
+    # WorldGuard & WorldEdit support.
+    worldGuard: false
+    # PlaceholderAPI support.
+    # The following placeholders are available:
+    # %ChristmasGifts_active% - Check if the player has a gift now or not.
+    # %ChristmasGifts_active_Player% - Check if the player has a gift now or not.
+    # %ChristmasGifts_limit% - Check if the player has a limit on gifts.
+    # %ChristmasGifts_limit_Player% - Check if the player has a limit on gifts.
+    # Output:
+    # true/yes - The player has reached the limit/The gift is active.
+    # false/no - The player has not reached the limit/The gift is not active.
+    placeholderAPI: false
+  # Functions.
+  functions:
+    # Worlds settings.
+    worlds:
+      # Insert allowed/blocked.
+      type: blocked
+      # List of worlds for the type.
+      list:
+        - "no"
+    # Biomes settings.
+    biomes:
+      # Insert allowed/blocked.
+      type: blocked
+      # List of biomes for the type.
+      list:
+        - "no"
+  # Gift Settings.
+  gift:
+    # Specify null here to have a head. REDSTONE_BLOCK is automatically installed on 1.7 and below.
+    material: "null"
+    # For ...-1.12.2 (Setting up Gift material block data) Example: "1".
+    id: "null"
+    # Base64 head texture for gift. You can use nicknames.
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNlZjlhYTE0ZTg4NDc3M2VhYzEzNGE0ZWU4OTcyMDYzZjQ2NmRlNjc4MzYzY2Y3YjFhMjFhODViNyJ9fX0="
+    # Restriction on gifts.
+    limit: true
+    # Maximum number of gifts.
+    max: 5
+    # In seconds. After how long the gift is deleted if it has not been used.
+    remove: 30
+    # Gift Spawn Settings.
+    spawn:
+      # // Set null so that the plugin replaces these settings with its own.
+      # Setting the FallBlock view for the material. Example: "OAK_PLANKS"
+      type: "null"
+      # For ...-1.12.2 (Setting up FallBlock material block data) Example: "5".
+      id: "null"
+      # Use of fireworks.
+      firework: true
+      # In seconds. How long will FallBlock's life last if it is not activated?
+      timeLived: 10
+      # Search for a location. The plugin automatically spawns a gift in front of the player.
+      searchLocation:
+        # Specify the height from which the gift will fall.
+        height: 3
+        # The distance from the player to the gift.
+        distance: 3
+      # Mode
+      mode:
+        # Restart required.
+        enabled: 2
+        # Use mode 2 for a better experience with plug-in performance.
+        # On command - 0
+        # Chance when the player moves - 1
+        # Every some time (minutes, hours) - 2
+        1:
+          # A full chance for a gift.
+          fullChance: 100000
+          # A chance gift.
+          chance: 10
+          # Checks the chances when the player moves every defined time.
+          every: 100
+          # Measured in ticks, 20 ticks is 1 second.
+          # Set the ticks value higher if the plugin starts causing lags.
+        2:
+          # How many people will try their luck for Mode 2 (null - disabled for 1 mode, -1 - all players).
+          # If you put a number, then put it without "" or "
+          people: 1
+          # In seconds
+          every: 900
+      # WorldGuard support mode.
+      # Ignore the region - 1 and others.
+      # Member/Owner region and __global__ - 2
+      # Only __global__ - 3
+      worldGuardSupport: 2
+      # Blocking the spawn of a gift for the player when:
+      blocked:
+        # When he flies.
+        fly: true
+        # When he's on the shift.
+        shift: true
+  # Grinch Settings
+  grinch:
+    # Enable?
+    enabled: true
+    # A chance for a gift from the grinch.
+    chance: 20
+  # Resource Settings
+  loot:
+    # Enable?
+    enabled: true
+    # If the gift was not received, the loot automatically drops out of it (When turned off too).
+    taked: false
+  # Hologram Settings.
+  holograms:
+    # Location settings for the hologram.
+    location:
+      addX: 0.5
+      addY: 1.2
+      addZ: 0.5
+    # Hologram Lines.
+    # Placeholder form: %placeholder%
+    # Available placeholders:
+    # %player% - player's name.
+    # %time% - the time before which you can receive the gift.
+    lines:
+      - "&cGift"
+      - "&fPress the RMB to open it!"
+actions:
+  # Actions:
+  # [actionbar] message - Send the actionbar with your message. For 1.11+
+  # [connect] server - Send a player to a specific BungeeCord server.
+  # WARNING: Requires BungeeMessaging. This is present on BungeeCord and WaterFall.
+  # On Velocity it might be disabled by default. Check your proxy config.
+  # [message] message - Send a message to the player.
+  # [broadcast] message - Send a message to all players.
+  # [log] message - Send a message to the console.
+  # [delay] ticks - Make a delay between actions. In ticks. (20 ticks = 1 second)
+  # [player] command - Run the command on behalf of the player.
+  # [teleport] world;x;y;z;yaw;pitch;delay - Teleport the player to the specified coordinates. The delay is measured in ticks.
+  # [console] command - Run the command on behalf of the console.
+  # [title] title;subtitle;fadeIn;stay;fadeOut - Send the title to the player. For 1.8+
+  # [sound] sound;volume;pitch;delay - Perform a sound for the player. The delay is measured in ticks.
+  # Search for sounds here: https://helpch.at/docs/$version$/org/bukkit/Sound.html
+  # // Replace $version$ with the version of your server, for example: https://helpch.at/docs/1.8.8/org/bukkit/Sound.html
+  # [effect] type;duration;amplifier;delay - Give the effect to the player. The delay and duration is measured in ticks.
+  # Find the types of effects here: https://helpch.at/docs/$version$/org/bukkit/potion/PotionEffectType.html
+  # [explosion] power;setFire;breakBlocks;delay;addX;addY;addZ - Create an explosion. The delay is measured in ticks.
+  # setFire, breakBlocks - set to false or true. addX, addY, addZ - double values that are added to the player's explosion location.
+  # [bossbar] message;color;type;time;style;flag - Send a bossbar to a player with a message for a specific time. For 1.9+
+  # Types:
+  # stop - The bossbar will disappear after the time you specified in time (seconds)
+  # time - Bossbar will animate the time that is running out.
+  # Functions:
+  # %time% - Seconds left.
+  # You can find all the functions like color, style, and flag here: https://helpch.at/docs/$version$/org/bukkit/boss/BossBar.html
+  #
+  # Info:
+  # Messages sent to the console may not replace placeholders or perform certain actions above.
+  # Built-in functions:
+  # %player% - Get the player name.
+  # Gift actions.
+  gift:
+    # When a gift appears.
+    spawn:
+      - "[message] &f"
+      - "[message] &f&l✽ &aSanta Claus&f has sent you &ca gift &f— &cHappy New year! &f&l✽"
+      - "[message] &f"
+    # If you lose a gift.
+    loss:
+      - "[message] &f"
+      - "[message] &f&l✽ &aSanta Claus&f took &cthe gift &f— &cYou forgot to pick it up! &f&l✽"
+      - "[message] &f"
+    # The player has successfully collected the gift.
+    success:
+      - "[message] &f&l✽ &r&fYou have successfully collected the gift."
+    # The player has reached the gift limit.
+    limit:
+      - "[message] &f&l✽ &cYou have already collected a certain number of gifts! :("
+  # Command actions.
+  command:
+    # The player has no permission.
+    noPermission:
+      - "[message] &f&l✽ &cYou don't have permission."

@@ -1,58 +1,79 @@
-# Spracheinstellungen
+# Beim Aktualisieren des Plugins kann diese Einstellung helfen, die Konfiguration für Sie zu aktualisieren (nicht löschen).
+version: 1.4
+
+# Spracheinstellungen.
 settings:
-  # Hologramm-Einstellungen
+  # Hologramm-Einstellungen.
   holograms:
-    # // Aktivieren und Deaktivieren ist in launch.yml
-    # Höhe für ein Hologramm
-    height: 1.2
-    # Hologrammlinien
+    # Standorteinstellungen für das Hologramm.
+    location:
+      addX: 0.5
+      addY: 1.2
+      addZ: 0.5
+    # Hologrammlinien.
     # Platzhalterformular in holographischen Anzeigen: {papi:%Platzhalter%}
     # Platzhalterformular in Dezent-Logrammen: %Platzhalter%
     # Verfügbare Platzhalter:
-    # %player% - Name des Spielers
+    # %player% - Name des Spielers.
     # %time% - die Zeit, vor der Sie das Geschenk erhalten können.
     lines:
       - "&cGeschenk"
       - "&fDrücken Sie die RMB, um es zu öffnen!"
 actions:
   # Aktionen:
-  # [message] achricht - Sende eine Nachricht an den Spieler.
-  # [broadcast] message - Sende eine Nachricht an alle Spieler
-  # [player] command - Führen Sie den Befehl im Namen des Players aus.
-  # [console] command - Führen Sie den Befehl im Namen der Konsole aus.
-  # [sound] sound;volume;pitch - Führen Sie einen Sound für den Player aus
-  # Hier nach Sounds suchen: https://helpch.at/docs/$version$/org/bukkit/Sound.html
-  # // Ersetzen $version$ zum Beispiel mit der Version Ihres Servers: https://helpch.at/docs/1.8.8/org/bukkit/Sound.html
-  # [particle] type;amount;r.g.b;radius - Beschwöre ein Teilchen in der Nähe des Geschenks
-  # type:
-  #   one - Ein Partikel erscheint anstelle des Geschenks.
-  #   circle - Partikel erscheinen um das Geschenk herum.
-  # r.g.b (Ersetzen Sie die RGB-Farbe, ohne die Punkte zu entfernen)
-  # amount - Zahl
-  # radius - Sie können eine Dezimalzahl (0.1...)
+  # [actionbar] Nachricht - Sende die Actionbar mit deiner Nachricht. Für 1.11+
+  # [connect] server - Spieler zu einem bestimmten BungeeCord-Server senden.
+  # WARNUNG: Erfordert BungeeMessaging. Dies ist bei BungeeCord und WaterFall vorhanden.
+  # Bei Velocity könnte es standardmäßig deaktiviert sein. Prüfe deine Proxy-Konfiguration.
+  # [message] Nachricht - Sende eine Nachricht an den Spieler.
+  # [broadcast] Nachricht - Sende eine Nachricht an alle Spieler.
+  # [log] Nachricht - Sende eine Nachricht an die Konsole.
+  # [delay] Zecken - Machen Sie eine Verzögerung zwischen den Aktionen. In Zecken. (20 Zecken = 1 Sekunde)
+  # [player] Befehl - Führe den Befehl im Namen des Spielers aus.
+  # [teleport] Welt;x;y;z;yaw;pitch;Verzögerung - Teleportiere den Spieler zu den angegebenen Koordinaten. Die Verzögerung wird in Ticks gemessen.
+  # [console] Befehl - Führe den Befehl im Namen der Konsole aus.
+  # [title] Titel;Untertitel;Einblendzeit;Anzeigezeit;Ausblendzeit - Sende den Titel an den Spieler. Für 1.8+
+  # [sound] Sound;Lautstärke;Tonhöhe;Verzögerung - Spiele einen Sound für den Spieler ab. Die Verzögerung wird in Ticks gemessen.
+  # Suche nach Sounds hier: https://helpch.at/docs/$version$/org/bukkit/Sound.html
+  # // Ersetze $version$ durch die Version deines Servers, zum Beispiel: https://helpch.at/docs/1.8.8/org/bukkit/Sound.html
+  # [effect] Typ;Dauer;Verstärker;Verzögerung - Gib dem Spieler den Effekt. Verzögerung und Dauer werden in Ticks gemessen.
+  # Finde die Effekttypen hier: https://helpch.at/docs/$version$/org/bukkit/potion/PotionEffectType.html
+  # [explosion] Leistung;FeuerSetzen;BlöckeZerstören;Verzögerung;XHinzufügen;YHinzufügen;ZHinzufügen - Erstelle eine Explosion. Die Verzögerung wird in Ticks gemessen.
+  # FeuerSetzen, BlöckeZerstören - auf false oder true setzen. XHinzufügen, YHinzufügen, ZHinzufügen - Double-Werte, die zum Explosionsort des Spielers addiert werden.
+  # [bossbar] Nachricht;Farbe;Typ;Zeit;Stil;Flag - Sende einen Bossbalken an einen Spieler mit einer Nachricht für eine bestimmte Zeit. Für 1.9+
+  # Typen:
+  # stop - der Bossbalken verschwindet nach der angegebenen Zeit (Sekunden)
+  # time - der Bossbalken animiert die verbleibende Zeit.
+  # Funktionen:
+  # %time% - verbleibende Sekunden.
+  # Alle Funktionen wie Farbe, Stil und Flag findest du hier: https://helpch.at/docs/$version$/org/bukkit/boss/BossBar.html
   #
+  # Information:
+  # An die Konsole gesendete Nachrichten können Platzhalter nicht ersetzen oder bestimmte oben genannte Aktionen ausführen.
   # Eingebaute Funktionen:
-  # %player% - Holen Sie sich den Namen des Spielers
-  # %rnd_player% - Erhalte den Namen eines zufälligen Spielers
+  # %player% - Spielernamen abrufen.
+  # Geschenkaktionen.
   gift:
-    # Wenn ein Geschenk erscheint
+    # Wenn ein Geschenk erscheint.
     spawn:
       - "[message] &f"
       - "[message] &f&l✽ &aDer Weihnachtsmann &fhat dir &cein Geschenk geschickt &f- &cFrohes neues Jahr! &f&l✽"
       - "[message] &f"
-    # Wenn Sie ein Geschenk verlieren
+    # Wenn Sie ein Geschenk verlieren.
     loss:
       - "[message] &f"
       - "[message] &f&l✽ &aDer Weihnachtsmann &fhat das &cGeschenk angenommen &f- &cSie haben vergessen, es abzuholen! &f&l✽"
       - "[message] &f"
-    # Der Spieler hat das Geschenk erfolgreich abgeholt
+    # Der Spieler hat das Geschenk erfolgreich abgeholt.
     success:
-      - "[message] &f&l✽ &r&fSie haben das Geschenk erfolgreich abgeholt"
-    # Der Spieler hat das Geschenklimit erreicht
+      - "[message] &f&l✽ &r&fSie haben das Geschenk erfolgreich abgeholt."
+    # Der Spieler hat das Geschenklimit erreicht.
     limit:
       - "[message] &f&l✽ &cSie haben bereits eine bestimmte Anzahl von Geschenken gesammelt! :("
+  # Befehlsaktionen.
+  command:
+    # Der Spieler hat keine Erlaubnis.
+    noPermission:
+      - "[message] &f&l✽ &cSie haben keine Erlaubnis."
 
-# Diese Übersetzung ist möglicherweise nicht 100% korrekt
-###############################################################
-# JDevs                                             Christmas #
-###############################################################
+# Diese Übersetzung ist möglicherweise nicht 100 % korrekt.
